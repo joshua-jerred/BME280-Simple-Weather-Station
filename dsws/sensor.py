@@ -10,7 +10,7 @@ def Collect(config_location):
 
     temp = Measurment("air_temperature")
     temp.addTag("sensor", "bme280")
-    temp.addField("value", random.uniform(-15.5, 75.0))
+    temp.addField("value", 100.0)
 
     rh = Measurment("relative_humidity")
     rh.addTag("sensor", "bme280")

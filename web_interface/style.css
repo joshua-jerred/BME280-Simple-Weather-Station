@@ -1,0 +1,4 @@
+li {
+  display: grid;
+  grid-template-columns: 10em 5em 2em 12em;
+}

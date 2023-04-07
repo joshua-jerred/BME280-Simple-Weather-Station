@@ -53,8 +53,8 @@ def CheckConfig(config):
     if "web_server" not in config:
         raise Exception("config.json is missing the web server section")
     ws_config = config["web_server"]
-    if "host" not in ws_config:
-        raise Exception("config.json is missing the web server host")
+    if "address" not in ws_config:
+        raise Exception("config.json is missing the web server address")
     if "port" not in ws_config:
         raise Exception("config.json is missing the web server port")
     if type(ws_config["port"]) is not int:

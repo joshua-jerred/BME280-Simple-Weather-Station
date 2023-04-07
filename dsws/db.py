@@ -1,5 +1,7 @@
 from influxdb import InfluxDBClient
 
+DEFAULT_FIELD = '*'
+
 
 class Measurment:
     def __init__(self, name):
@@ -125,9 +127,17 @@ class DB:
             self.db_name
         )
 
-    def readMostRecent(self, name):
+    def getMostRecent(self, measurment_name):
         client = self.__web_server_client()
-        res = client.query('')
+        res = client.query(
+            f'SELECT last(value) FROM {measurment_name} WHERE time > now() - 1h limit 1000;')
         client.close()
+        res = list(res.get_points(measurement=measurment_name))[0]
+        return {'time': res['time'], 'value': res['last']}
 
-    def countData(self, measurment_name):
+    def countEntries(self, measurment_name):
+        client = self.__web_server_client()
+        res = client.query(
+            f'SELECT COUNT(*) FROM "{measurment_name}"')
+        res = list(res.get_points(measurement=measurment_name))[0]
+        return {'time': res['time'], 'count': res['count_value']}
