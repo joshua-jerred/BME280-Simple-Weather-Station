@@ -1,4 +1,16 @@
+ul {
+  padding: 0px;
+}
+
 li {
+  width: 100%;
   display: grid;
-  grid-template-columns: 10em 5em 2em 12em;
+  grid-template-columns: 10em 8em 3em 12em;
+}
+
+#data-container {
+  width: fit-content;
+  position: absolute;
+  left: 50px;
+  top: 50px;
 }

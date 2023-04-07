@@ -4,31 +4,50 @@
 <head>
   <title>DSWS</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="w3.css">
   <script src="script.js"></script>
 </head>
 
 <body>
-  <h1>BME240</h1>
-  <ul>
-    <li id="temperature">
-      <span class="label">Temperature: </span>
-      <span class="value"></span>
-      at
-      <span class="time"></span>
-    </li>
-    <li id="humidity">
-      <span class="label">Relative Humidity: </span>
-      <span class="value"></span>
-      at
-      <span class="time"></span>
-    </li>
-    <li id="pressure">
-      <span class="label">Pressure:</span>
-      <span class="value"></span>
-      at
-      <span class="time"></span>
-    </li>
-  </ul>
+  <div class="w3-card-4" id="data-container">
+    <header class="w3-container w3-blue">
+      <h1>BME240</h1>
+    </header>
+    <div class="w3-container">
+
+      <ul>
+        <li id="temperature">
+          <span class="label">Temperature: </span>
+          <span>
+            <span class="value"></span>
+            <span>&#176;C</span>
+          </span>
+          at
+          <span class="time"></span>
+        </li>
+
+        <li id="pressure">
+          <span class="label">Pressure:</span>
+          <span>
+            <span class="value"></span>
+            <span>mbar</span>
+          </span>
+          at
+          <span class="time"></span>
+        </li>
+
+        <li id="humidity">
+          <span class="label">Relative Humidity: </span>
+          <span>
+            <span class="value"></span>
+            <span>%</span>
+          </span>
+          at
+          <span class="time"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </body>
 
 </html>

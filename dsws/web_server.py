@@ -7,7 +7,7 @@ from .config import ReadConfig
 from .db import DB
 
 WEB_SRC = "web_interface/"
-ALLOWED_FILES = ["/", "/style.css", "/script.js"]
+ALLOWED_FILES = ["/", "/style.css", "/script.js", "/w3.css"]
 API_PATHS = ["/api/temperature", "/api/humidity", "/api/pressure"]
 
 
@@ -33,6 +33,9 @@ class RequestHandler(BaseHTTPRequestHandler):
         elif self.path == "/style.css":
             self.send_header('Content-type', 'text/css')
             file += "style.css"
+        elif self.path == "/w3.css":
+            self.send_header('Content-type', 'text/css')
+            file += "w3.css"
         elif self.path == "/script.js":
             self.send_header('Content-type', 'text/javascript')
             file += "script.js"
