@@ -1,0 +1,23 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": 8086,
+    "db_name": "dsws",
+    "admin_user": "admin",
+    "admin_password": "admin",
+    "web_server_user": "web_server",
+    "web_server_password": "web_server",
+    "sensor_user": "sensor",
+    "sensor_password": "sensor",
+    "retention_policy": "INF"
+  },
+  "sensor": {
+    "i2c_bus": 1,
+    "i2c_address": "0x76",
+    "read_interval": 10
+  },
+  "web_server": {
+    "port": 8080,
+    "host": "127.0.0.1"
+  }
+}
